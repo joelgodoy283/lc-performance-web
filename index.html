@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LC Performance – Reprogramaciones Stage 1/2/3, EGR/DPF OFF, Diagnóstico profesional. Bv. Seguí 2122, Rosario. Tel: 341 247 7055." />
+  <meta name="keywords" content="reprogramacion motor, stage 1, stage 2, stage 3, EGR DPF, diagnóstico computarizado, mecánica, Rosario" />
+  <title>LC Performance | Performance & Reprogramaciones – Rosario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:    #f0b800;
+      --gold-lt: #ffd84d;
+      --gold-dk: #c99800;
+      --dark:    #0a0a0a;
+      --dark2:   #111111;
+      --dark3:   #1a1a1a;
+      --gray:    #272727;
+      --light:   #f0f0f0;
+      --muted:   #777;
+      --white:   #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(240,184,0,0.2);
+      transition: box-shadow .3s;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-emblem {
+      position: relative;
+      width: 44px; height: 44px;
+    }
+
+    .logo-emblem svg { width: 44px; height: 44px; }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-brand .brand-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .nav-brand .brand-name span { color: var(--gold); }
+
+    .nav-brand .brand-sub {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ccc;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .4px;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold) !important;
+      color: #000 !important;
+      padding: 9px 22px;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-lt) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all .3s;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 5% 80px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 65% 50%, rgba(240,184,0,0.10) 0%, transparent 65%),
+        linear-gradient(160deg, #0a0a0a 0%, #130f00 100%);
+    }
+
+    .hero-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(240,184,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(240,184,0,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* diagonal accent stripe */
+    .hero-stripe {
+      position: absolute;
+      top: 0; right: 0;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 45%, rgba(240,184,0,0.04) 45%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(240,184,0,0.12);
+      border: 1px solid rgba(240,184,0,0.35);
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: blink 1.6s infinite;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; } 50% { opacity: .3; }
+    }
+
+    .hero-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(50px, 7.5vw, 96px);
+      font-weight: 700;
+      line-height: .92;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    .hero-title .gold { color: var(--gold); }
+
+    .hero-divider {
+      width: 60px; height: 3px;
+      background: var(--gold);
+      margin-bottom: 22px;
+    }
+
+    .hero-tagline {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #999;
+      margin-bottom: 38px;
+      max-width: 500px;
+    }
+
+    .hero-bullets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .bullet {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ccc;
+    }
+
+    .bullet::before {
+      content: '✔';
+      color: var(--gold);
+      font-size: 11px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: #000;
+      text-decoration: none;
+      padding: 15px 34px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: .3px;
+      transition: background .2s, transform .15s;
+    }
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--white);
+      text-decoration: none;
+      padding: 15px 32px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 15px;
+      border: 1px solid rgba(255,255,255,0.18);
+      transition: border-color .2s, color .2s, transform .15s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .stat-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--gold); }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 5px; letter-spacing: .5px; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 5%; }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(34px, 4.5vw, 56px);
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    /* ── PROMO BANNER ── */
+    #promo {
+      background: var(--gold);
+      padding: 0;
+    }
+
+    .promo-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 18px 5%;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .promo-inner p {
+      font-size: 14px;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: .5px;
+    }
+
+    .promo-inner a {
+      background: #000;
+      color: var(--gold);
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity .2s;
+    }
+    .promo-inner a:hover { opacity: .85; }
+
+    /* ── SERVICES ── */
+    #servicios { background: var(--dark2); }
+
+    .services-header { margin-bottom: 52px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 34px 28px;
+      transition: border-color .25s, transform .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s;
+    }
+
+    .service-card:hover { border-color: rgba(240,184,0,0.3); transform: translateY(-4px); }
+    .service-card:hover::after { transform: scaleX(1); }
+
+    .service-icon {
+      width: 50px; height: 50px;
+      background: rgba(240,184,0,0.10);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .service-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 16px;
+    }
+
+    .stag {
+      background: rgba(240,184,0,0.08);
+      border: 1px solid rgba(240,184,0,0.22);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 100px;
+      letter-spacing: .5px;
+    }
+
+    /* ── STAGES ── */
+    #stages { background: var(--dark); }
+
+    .stages-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 52px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .stages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--gray);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .stage-item {
+      padding: 48px 36px;
+      border-right: 1px solid var(--gray);
+      position: relative;
+      transition: background .25s;
+      overflow: hidden;
+    }
+
+    .stage-item:last-child { border-right: none; }
+
+    .stage-item::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s;
+    }
+
+    .stage-item:hover { background: rgba(240,184,0,0.04); }
+    .stage-item:hover::before { transform: scaleX(1); }
+
+    .stage-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 80px;
+      font-weight: 700;
+      color: rgba(240,184,0,0.10);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stage-item h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      letter-spacing: .5px;
+    }
+
+    .stage-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    .stage-power {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 22px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(240,184,0,0.08);
+      border: 1px solid rgba(240,184,0,0.2);
+      border-radius: 100px;
+      padding: 6px 16px;
+    }
+
+    /* ── ABOUT ── */
+    #nosotros {
+      background: var(--dark2);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-card {
+      background: var(--dark3);
+      border: 1px solid var(--gray);
+      border-radius: 14px;
+      padding: 52px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold-dk), var(--gold-lt));
+    }
+
+    .about-card .big-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 90px;
+      font-weight: 700;
+      line-height: 1;
+      color: rgba(240,184,0,0.12);
+      margin-bottom: -16px;
+    }
+
+    .about-card .big-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about-card .big-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .about-corner {
+      position: absolute;
+      bottom: -16px; right: -16px;
+      width: 120px; height: 120px;
+      background: rgba(240,184,0,0.05);
+      border: 1px solid rgba(240,184,0,0.15);
+      border-radius: 10px;
+      z-index: -1;
+    }
+
+    .about-content .section-sub { max-width: 100%; }
+
+    .about-list {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    .check {
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── GALLERY ── */
+    #trabajos { background: var(--dark); }
+
+    .gallery-header { margin-bottom: 44px; }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .work-card {
+      background: var(--dark3);
+      border: 1px solid var(--gray);
+      border-radius: 10px;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 0;
+      transition: border-color .25s, transform .25s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* background image support */
+    .work-card[style*="background-image"] { background-size: cover; background-position: center; }
+
+    /* default gradient when no image */
+    .work-card:not([style*="background-image"]) {
+      background: linear-gradient(135deg, #1a1600 0%, #2a2000 50%, #111 100%);
+    }
+
+    /* gold accent corner decoration */
+    .work-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+
+    .work-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .work-card:hover::before { opacity: 1; }
+
+    /* dark overlay at the bottom for text */
+    .work-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 16px 16px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.88));
+      z-index: 1;
+    }
+
+    .work-card.featured .work-info { padding: 28px 22px 20px; }
+
+    .work-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      display: block;
+    }
+
+    .work-card.featured .work-label { font-size: 20px; }
+
+    .work-type {
+      font-size: 11px;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: .8px;
+      display: block;
+      margin-top: 3px;
+    }
+
+    /* "ver en instagram" hover overlay */
+    .work-ig-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .25s;
+      z-index: 2;
+    }
+
+    .work-card:hover .work-ig-overlay { opacity: 1; }
+
+    .ig-cta-pill {
+      background: var(--gold);
+      color: #000;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 100px;
+      letter-spacing: .5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* placeholder icon when no image */
+    .work-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      opacity: .25;
+    }
+    .work-card.featured .work-placeholder { font-size: 60px; }
+    .work-card[style*="background-image"] .work-placeholder { display: none; }
+
+    .work-card:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-cta { text-align: center; margin-top: 32px; }
+
+    /* ── CONTACT ── */
+    #contacto { background: var(--dark2); }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-ico {
+      width: 46px; height: 46px;
+      background: rgba(240,184,0,0.10);
+      border: 1px solid rgba(240,184,0,0.2);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .contact-row h4 {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+    }
+
+    .contact-row p, .contact-row a {
+      font-size: 16px;
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .contact-row a:hover { color: var(--gold); }
+
+    .form-wrap {
+      background: var(--dark3);
+      border: 1px solid var(--gray);
+      border-radius: 12px;
+      padding: 40px 36px;
+    }
+
+    .form-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      letter-spacing: .5px;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-group label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--dark);
+      border: 1px solid var(--gray);
+      border-radius: 7px;
+      padding: 12px 15px;
+      color: var(--white);
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color .2s;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--gold); }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select option { background: var(--dark3); }
+
+    .btn-submit {
+      background: var(--gold);
+      color: #000;
+      border: none;
+      padding: 15px 32px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 4px;
+    }
+    .btn-submit:hover { background: var(--gold-lt); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060606;
+      padding: 60px 5% 28px;
+      border-top: 1px solid rgba(240,184,0,0.12);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-top: 14px;
+      max-width: 320px;
+    }
+
+    .footer-col h5 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+
+    .footer-col a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p { font-size: 13px; color: #444; }
+
+    .socials { display: flex; gap: 10px; }
+
+    .soc-btn {
+      width: 38px; height: 38px;
+      background: var(--dark3);
+      border: 1px solid var(--gray);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .soc-btn:hover { border-color: var(--gold); background: rgba(240,184,0,0.08); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-btn {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 990;
+      width: 60px; height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 22px rgba(37,211,102,0.45);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.6); }
+    .wa-btn svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 72px; left: 0; right: 0;
+        background: var(--dark2);
+        padding: 28px 5%;
+        border-bottom: 1px solid var(--gray);
+        gap: 20px;
+      }
+
+      #nosotros { grid-template-columns: 1fr; gap: 48px; }
+
+      .stages-grid { grid-template-columns: 1fr; }
+      .stage-item { border-right: none; border-bottom: 1px solid var(--gray); }
+      .stage-item:last-child { border-bottom: none; }
+
+      .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
+
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-brand { grid-column: span 2; }
+
+      .works-grid { grid-template-columns: repeat(2, 1fr); }
+      .work-card:first-child { grid-column: span 2; }
+
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 72px 5%; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns a { text-align: center; justify-content: center; }
+      .hero-stats { gap: 24px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">
+    <!-- Car outline SVG logo -->
+    <div class="logo-emblem">
+      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="44" height="44" rx="6" fill="#f0b800" fill-opacity="0.12"/>
+        <text x="22" y="31" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="19" fill="#f0b800">LC</text>
+      </svg>
+    </div>
+    <div class="nav-brand">
+      <span class="brand-name">LC <span>Performance</span></span>
+      <span class="brand-sub">Performance & Reprogramaciones</span>
+    </div>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#stages">Stages</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#trabajos">Trabajos</a></li>
+    <li><a href="#contacto" class="nav-cta">Consultar</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-stripe"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Rosario, Santa Fe</div>
+
+    <h1 class="hero-title">
+      Tu Vehículo<br/>
+      <span class="gold">Nuestra</span><br/>
+      Prioridad
+    </h1>
+
+    <div class="hero-divider"></div>
+
+    <p class="hero-tagline">Performance &amp; Reprogramaciones</p>
+
+    <p class="hero-sub">
+      Diagnóstico profesional, reprogramaciones Stage 1/2/3 y soluciones EGR/DPF OFF.
+      Trabajo garantizado. Resultados probados.
+    </p>
+
+    <div class="hero-bullets">
+      <span class="bullet">Diagnóstico profesional</span>
+      <span class="bullet">Trabajo garantizado</span>
+      <span class="bullet">Stage 1 · 2 · 3</span>
+      <span class="bullet">EGR / DPF OFF</span>
+    </div>
+
+    <div class="hero-btns">
+      <a href="https://wa.me/5493412477055" target="_blank" rel="noopener" class="btn-gold">
+        💬 Consultar por WhatsApp
+      </a>
+      <a href="tel:3412477055" class="btn-outline">
+        📞 341 247 7055
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">+500<span>.</span></div>
+        <div class="stat-label">Trabajos realizados</div>
+      </div>
+      <div>
+        <div class="stat-num">7<span>K</span></div>
+        <div class="stat-label">Seguidores IG</div>
+      </div>
+      <div>
+        <div class="stat-num">3<span>×</span></div>
+        <div class="stat-label">Stages disponibles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROMO BANNER ══ -->
+<div id="promo">
+  <div class="promo-inner">
+    <p>📞 Bv. Seguí 2122 – Rosario, Santa Fe &nbsp;|&nbsp; ☎ 341 247 7055 &nbsp;|&nbsp; Diagnóstico profesional · Trabajo garantizado</p>
+    <a href="https://wa.me/5493412477055" target="_blank" rel="noopener">Pedir turno →</a>
+  </div>
+</div>
+
+<!-- ══ SERVICIOS ══ -->
+<section id="servicios">
+  <div class="services-header">
+    <div class="section-tag">Qué hacemos</div>
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-sub">Tecnología de vanguardia y experiencia real para sacar lo mejor de tu motor.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>Reprogramación de Motor</h3>
+      <p>Optimización completa de la ECU para maximizar potencia, torque y eficiencia. Stage 1, 2 y 3 disponibles.</p>
+      <div class="service-tags">
+        <span class="stag">Stage 1</span>
+        <span class="stag">Stage 2</span>
+        <span class="stag">Stage 3</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <h3>Diagnóstico Profesional</h3>
+      <p>Scanner de última generación para detección precisa de fallas eléctricas y electrónicas en cualquier vehículo.</p>
+      <div class="service-tags">
+        <span class="stag">Scanner OBD</span>
+        <span class="stag">ECU</span>
+        <span class="stag">Eléctrica</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💨</div>
+      <h3>EGR / DPF OFF</h3>
+      <p>Eliminación o desactivación por software de válvula EGR y filtro de partículas DPF. Más potencia, menos problemas.</p>
+      <div class="service-tags">
+        <span class="stag">EGR Off</span>
+        <span class="stag">DPF Off</span>
+        <span class="stag">Software</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3>Mecánica Automotriz</h3>
+      <p>Servicio integral de mecánica avanzada. Motor, suspensión y frenos con equipamiento profesional.</p>
+      <div class="service-tags">
+        <span class="stag">Motor</span>
+        <span class="stag">Suspensión</span>
+        <span class="stag">Frenos</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🔄</div>
+      <h3>Service Caja Automática</h3>
+      <p>Diagnóstico, mantenimiento y reparación de cajas de cambio automáticas AT. Aceite, filtros y revisión completa.</p>
+      <div class="service-tags">
+        <span class="stag">Caja AT</span>
+        <span class="stag">Aceite ATF</span>
+        <span class="stag">Revisión</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🛢️</div>
+      <h3>Lubricantes Premium</h3>
+      <p>Distribuidor de Mannol y Liqui Moly. Lubricantes sintéticos de alta performance para tu motor.</p>
+      <div class="service-tags">
+        <span class="stag">Mannol</span>
+        <span class="stag">Liqui Moly</span>
+        <span class="stag">Sintéticos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STAGES ══ -->
+<section id="stages">
+  <div class="stages-top">
+    <div>
+      <div class="section-tag">Reprogramaciones</div>
+      <h2 class="section-title">¿Qué Stage<br/>necesitás?</h2>
+    </div>
+    <p class="section-sub" style="max-width:380px; align-self:flex-end;">
+      Cada nivel de reprogramación está pensado según el estado de tu vehículo y tu objetivo de rendimiento.
+    </p>
+  </div>
+
+  <div class="stages-grid">
+    <div class="stage-item">
+      <div class="stage-num">01</div>
+      <h3>Stage 1</h3>
+      <p>Solo reprogramación ECU, sin modificaciones físicas. Ideal para autos de serie que buscan más potencia y torque con bajo costo de inversión.</p>
+      <div class="stage-power">⬆ 15–30 % de potencia</div>
+    </div>
+
+    <div class="stage-item">
+      <div class="stage-num">02</div>
+      <h3>Stage 2</h3>
+      <p>Reprogramación + mejoras en admisión y/o escape. Mayor flujo de aire para un rendimiento notablemente superior al stock.</p>
+      <div class="stage-power">⬆ 30–50 % de potencia</div>
+    </div>
+
+    <div class="stage-item">
+      <div class="stage-num">03</div>
+      <h3>Stage 3</h3>
+      <p>Reprogramación avanzada con modificaciones internas del motor. Para proyectos de alto rendimiento con mecánica forjada.</p>
+      <div class="stage-power">⬆ 50 %+ de potencia</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NOSOTROS ══ -->
+<section id="nosotros">
+  <div class="about-visual">
+    <div class="about-card">
+      <div class="big-num">LC</div>
+      <div class="big-label">Performance</div>
+      <div class="big-sub">Mechanical Engineering – Rosario 1996</div>
+
+      <div style="margin-top:28px; display:flex; justify-content:center; gap:32px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.06);">
+        <div style="text-align:center;">
+          <div style="font-family:Rajdhani,sans-serif; font-size:30px; font-weight:700; color:var(--gold);">+7K</div>
+          <div style="font-size:11px; color:var(--muted);">Seguidores</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:Rajdhani,sans-serif; font-size:30px; font-weight:700; color:var(--gold);">+500</div>
+          <div style="font-size:11px; color:var(--muted);">Trabajos</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:Rajdhani,sans-serif; font-size:30px; font-weight:700; color:var(--gold);">3</div>
+          <div style="font-size:11px; color:var(--muted);">Stages</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-corner"></div>
+  </div>
+
+  <div class="about-content">
+    <div class="section-tag">Sobre nosotros</div>
+    <h2 class="section-title">Pasión por<br/><span style="color:var(--gold)">el rendimiento</span></h2>
+    <p class="section-sub">
+      LC Performance es un taller especializado en mecánica automotriz avanzada y reprogramaciones, ubicado en Rosario.
+      Combinamos equipos de diagnóstico de última generación con años de experiencia para garantizar el mejor resultado.
+    </p>
+    <ul class="about-list">
+      <li><span class="check">✔</span> Diagnóstico computarizado con equipos profesionales</li>
+      <li><span class="check">✔</span> Reprogramaciones ECU probadas con resultados reales</li>
+      <li><span class="check">✔</span> Soluciones EGR/DPF OFF por software</li>
+      <li><span class="check">✔</span> Atención personalizada y seguimiento de cada trabajo</li>
+      <li><span class="check">✔</span> Capacitaciones y asesoramiento técnico especializado</li>
+      <li><span class="check">✔</span> Distribuidor de Mannol y Liqui Moly</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ TRABAJOS ══ -->
+<section id="trabajos">
+  <div class="gallery-header">
+    <div class="section-tag">Galería</div>
+    <h2 class="section-title">Algunos de Nuestros Trabajos</h2>
+    <p class="section-sub">Una muestra de los vehículos que pasaron por LC Performance.</p>
+  </div>
+
+  <div class="works-grid" id="trabajosGrid">
+    <!-- Las tarjetas se generan desde el bloque TRABAJOS del script -->
+  </div>
+
+  <div class="gallery-cta">
+    <a href="https://www.instagram.com/lc_performance1996/" target="_blank" rel="noopener" class="btn-outline">
+      📸 Ver más en Instagram @lc_performance1996
+    </a>
+  </div>
+</section>
+
+<!-- ══ CONTACTO ══ -->
+<section id="contacto">
+  <div class="contact-wrap">
+    <div>
+      <div class="section-tag">Contacto</div>
+      <h2 class="section-title">Hablemos de<br/><span style="color:var(--gold)">tu vehículo</span></h2>
+      <p class="section-sub">Consultanos sin compromiso. Te asesoramos sobre el mejor servicio para tu auto.</p>
+
+      <div class="contact-info-list">
+        <div class="contact-row">
+          <div class="contact-ico">📍</div>
+          <div>
+            <h4>Dirección</h4>
+            <p>Bv. Seguí 2122, Rosario – Santa Fe (2000)</p>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-ico">📞</div>
+          <div>
+            <h4>Teléfono</h4>
+            <a href="tel:3412477055">341 247 7055</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-ico">💬</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/5493412477055" target="_blank" rel="noopener">Escribinos directo</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-ico">📸</div>
+          <div>
+            <h4>Instagram</h4>
+            <a href="https://www.instagram.com/lc_performance1996/" target="_blank" rel="noopener">@lc_performance1996</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <div class="form-title">Envianos tu consulta</div>
+      <form class="contact-form" onsubmit="sendWA(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="tel">Teléfono</label>
+            <input type="tel" id="tel" placeholder="Tu número" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="vehiculo">Vehículo</label>
+          <input type="text" id="vehiculo" placeholder="Ej: VW Bora 1.8T 2005" />
+        </div>
+        <div class="form-group">
+          <label for="servicio">Servicio de interés</label>
+          <select id="servicio">
+            <option value="">Seleccioná un servicio</option>
+            <option>Diagnóstico computarizado</option>
+            <option>Reprogramación Stage 1</option>
+            <option>Reprogramación Stage 2</option>
+            <option>Reprogramación Stage 3</option>
+            <option>EGR / DPF OFF</option>
+            <option>Service caja automática</option>
+            <option>Mecánica general</option>
+            <option>Lubricantes Mannol / Liqui Moly</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" placeholder="Contanos más sobre lo que necesitás..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">
+          💬 Enviar por WhatsApp
+        </button>
+        <p style="font-size:12px; color:var(--muted); text-align:center; margin-top:10px; line-height:1.5;">
+          Al hacer click se abrirá WhatsApp con tu consulta lista para enviar.<br/>
+          No necesitás ninguna app adicional.
+        </p>
+      </form>
+      <!-- Toast de confirmación -->
+      <div id="waToast" style="display:none; margin-top:16px; background:rgba(37,211,102,0.12); border:1px solid rgba(37,211,102,0.3); border-radius:8px; padding:12px 16px; font-size:13px; color:#4cde8a; text-align:center;">
+        ✅ WhatsApp abierto correctamente. ¡Esperamos tu mensaje!
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="nav-logo" href="#" style="text-decoration:none">
+        <div class="logo-emblem">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="44" height="44" rx="6" fill="#f0b800" fill-opacity="0.12"/>
+            <text x="22" y="31" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="19" fill="#f0b800">LC</text>
+          </svg>
+        </div>
+        <div class="nav-brand">
+          <span class="brand-name">LC <span>Performance</span></span>
+          <span class="brand-sub">Performance & Reprogramaciones</span>
+        </div>
+      </a>
+      <p>Taller especializado en mecánica automotriz avanzada y reprogramaciones ECU en Rosario, Santa Fe. Tu vehículo, nuestra prioridad.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Servicios</h5>
+      <ul>
+        <li><a href="#servicios">Reprogramación ECU</a></li>
+        <li><a href="#stages">Stage 1 / 2 / 3</a></li>
+        <li><a href="#servicios">EGR / DPF OFF</a></li>
+        <li><a href="#servicios">Diagnóstico</a></li>
+        <li><a href="#servicios">Caja Automática</a></li>
+        <li><a href="#servicios">Lubricantes</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <ul>
+        <li><a href="tel:3412477055">341 247 7055</a></li>
+        <li><a href="https://wa.me/5493412477055" target="_blank">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/lc_performance1996/" target="_blank">Instagram</a></li>
+        <li><a href="#contacto">Formulario</a></li>
+        <li><a href="#">Bv. Seguí 2122, Rosario</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 LC Performance – Rosario, Santa Fe. Todos los derechos reservados.</p>
+    <div class="socials">
+      <a class="soc-btn" href="https://www.instagram.com/lc_performance1996/" target="_blank" rel="noopener" title="Instagram">📸</a>
+      <a class="soc-btn" href="https://wa.me/5493412477055" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+      <a class="soc-btn" href="tel:3412477055" title="Llamar">📞</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ WHATSAPP FLOAT ══ -->
+<a class="wa-btn" href="https://wa.me/5493412477055" target="_blank" rel="noopener" title="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  /* ══════════════════════════════════════════════════════
+     CONFIGURACIÓN DE TRABAJOS
+     Para agregar o editar trabajos:
+       - titulo   : nombre del trabajo (ej: "Amarok V6")
+       - tipo     : descripción corta (ej: "Stage 2 • EGR Off")
+       - url      : URL completa del post de Instagram
+                    (ej: "https://www.instagram.com/p/ABC123/")
+       - img      : URL de imagen (opcional).
+                    Si dejás "", se muestra un fondo dorado.
+                    Podés usar la URL directa de una imagen
+                    descargada de tu Instagram o subirla a
+                    tu VPS y poner "/img/amarok.jpg"
+       - icono    : emoji de respaldo si no hay imagen
+     ══════════════════════════════════════════════════════ */
+  const TRABAJOS = [
+    {
+      titulo: "Amarok V6",
+      tipo:   "Stage 2 • EGR Off",
+      url:    "https://www.instagram.com/lc_performance1996/",
+      img:    "",
+      icono:  "🚙"
+    },
+    {
+      titulo: "BMW M140",
+      tipo:   "Stage 1 • Diagnóstico",
+      url:    "https://www.instagram.com/lc_performance1996/",
+      img:    "",
+      icono:  "🏎️"
+    },
+    {
+      titulo: "Sandero RS",
+      tipo:   "Reprogramación",
+      url:    "https://www.instagram.com/lc_performance1996/",
+      img:    "",
+      icono:  "🚗"
+    },
+    {
+      titulo: "Bora 1.8T Stage 3",
+      tipo:   "Forged · Full Stage 3",
+      url:    "https://www.instagram.com/lc_performance1996/",
+      img:    "",
+      icono:  "⚙️"
+    },
+    {
+      titulo: "Service Caja AT",
+      tipo:   "Caja automática",
+      url:    "https://www.instagram.com/lc_performance1996/",
+      img:    "",
+      icono:  "🔄"
+    }
+  ];
+
+  /* ─── Entrance animations (declarado antes de renderTrabjos) ─── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .stage-item, .contact-row').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity .45s ease, transform .45s ease';
+    io.observe(el);
+  });
+
+  /* ─── Render galería ─── */
+  (function renderTrabjos() {
+    const grid = document.getElementById('trabajosGrid');
+    if (!grid) return;
+    grid.innerHTML = TRABAJOS.map((t, i) => {
+      const isFeatured = i === 0;
+      const bgStyle = t.img
+        ? `style="background-image:url('${t.img}')"`
+        : '';
+      return `
+        <a href="${t.url}" target="_blank" rel="noopener"
+           class="work-card${isFeatured ? ' featured' : ''}" ${bgStyle}>
+          <span class="work-placeholder">${t.icono}</span>
+          <div class="work-ig-overlay">
+            <span class="ig-cta-pill">📸 Ver en Instagram →</span>
+          </div>
+          <div class="work-info">
+            <span class="work-label">${t.titulo}</span>
+            <span class="work-type">${t.tipo}</span>
+          </div>
+        </a>`;
+    }).join('');
+
+    /* animate newly created cards */
+    grid.querySelectorAll('.work-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = 'opacity .45s ease, transform .45s ease';
+      io.observe(el);
+    });
+  })();
+
+  /* ─── Hamburger ─── */
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
+  );
+
+  /* ─── Navbar shadow on scroll ─── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow =
+      window.scrollY > 30 ? '0 2px 28px rgba(0,0,0,0.6)' : 'none';
+  });
+
+  /* ─── Formulario → WhatsApp ─────────────────────────────
+     Al enviar, abre WhatsApp con los datos pre-completados.
+     El usuario solo tiene que presionar "Enviar" en WhatsApp.
+  ─────────────────────────────────────────────────────── */
+  function sendWA(e) {
+    e.preventDefault();
+    const n = document.getElementById('nombre').value.trim();
+    const t = document.getElementById('tel').value.trim();
+    const v = document.getElementById('vehiculo').value.trim();
+    const s = document.getElementById('servicio').value;
+    const m = document.getElementById('mensaje').value.trim();
+
+    let txt = `Hola LC Performance! 👋\n\n*Nombre:* ${n}\n`;
+    if (t) txt += `*Teléfono:* ${t}\n`;
+    if (v) txt += `*Vehículo:* ${v}\n`;
+    if (s) txt += `*Servicio:* ${s}\n`;
+    if (m) txt += `\n*Mensaje:* ${m}`;
+
+    window.open(`https://wa.me/5493412477055?text=${encodeURIComponent(txt)}`, '_blank');
+
+    /* mostrar toast de confirmación */
+    const toast = document.getElementById('waToast');
+    if (toast) {
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 5000);
+    }
+  }
+
+</script>
+</body>
+</html>
