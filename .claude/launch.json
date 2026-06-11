@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lc-performance",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8787", "--directory", "C:\\Users\\joel_\\lc-performance-web"],
+      "port": 8787
+    }
+  ]
+}
