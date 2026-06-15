@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joelgodoy283.github.io/lc-performance-web/sitemap.xml
